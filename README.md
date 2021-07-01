@@ -5,7 +5,7 @@
 - Change the project name in `.firebaserc` to your Firebase project's name.
 - Run `npm i` in both the root directory, and in the `./functions/possum/` directory.
 - From the root directory, run `npm run dev`.
-- Open `http://localhost:5001/PROJECT_ID/PROJECT_REGION/handler` in the browser. For example: `http://localhost:5001/eleventy-firebase/us-central1/handler`.
+- Open `http://localhost:5000/` in the browser.
 
 ## Important changes
 
@@ -25,15 +25,6 @@ functions/possum/*
 ```
 
 ## TODO
-
-### Long url
-Currently the function path is really long:
-
-```
-http://localhost:5001/eleventy-firebase/us-central1/handler
-```
-
-I think doing the rewrites configuration mentioned in [these docs](https://firebase.google.com/docs/hosting/functions#direct-requests-to-function), but it didn't seem to work. I suspect this isn't working because I changed the functions source directory but I'm not sure 🤷‍♂️
 
 ### npm script runs eleventy twice
 We want eleventy to run once to completion before we start the firebase emulator. But we also want to use `eleventy --watch` to watch for changes. Unfortunately `eleventy --watch` will _also_ do an eleventy build the first time it is run, so this means the `npm run dev` command actually runs eleventy twice. I think `eleventy --watch` should have an `--ignore-initial` flag (Chokidar supports this but it doesn't seem to pass through to `eleventy --watch`. [Vote for my issue!](https://github.com/11ty/eleventy/issues/1336)

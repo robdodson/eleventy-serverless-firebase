@@ -3,9 +3,9 @@
     "source": "./functions/possum/"
   },
   "hosting": {
-    "rewrites": [ {
+    "rewrites": [{
       "source": "/",
       "function": "handler"
-    } ]
+    }]
   }
 }
