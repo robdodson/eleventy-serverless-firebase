@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "source": "./functions/possum/"
+  },
+  "hosting": {
+    "rewrites": [ {
+      "source": "/",
+      "function": "handler"
+    } ]
+  }
+}
